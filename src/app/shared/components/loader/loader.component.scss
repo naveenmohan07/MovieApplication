@@ -1,0 +1,14 @@
+.circle{
+    position: relative;
+      width: 15rem;
+      height: 15rem;
+      border: 1.5px solid;
+      border-color: #2e5fe6 #1B998B;
+      border-radius: 50%;
+      animation: spin 1.5s infinite;
+  }
+  @keyframes spin{
+      to{
+          transform: rotate(360deg);
+      }
+  }

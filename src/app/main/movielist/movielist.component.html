@@ -1,0 +1,14 @@
+<div class="flex flex-col px-32 pt-20">
+    <div class="bg-gradient-to-r from-backdroptop to-gray-600 h-14 flex flex-wrap rounded-md justify-between items-center">
+        <button (click)="sort()" class="flex text-gray-300 pl-3 focus:outline-none"><img src="../../../assets/sort.svg" class="h-6">Date {{ dascending ? 'Descending' : 'Ascending' }}</button>
+        <button (click)="sortname()" class="flex text-gray-300 pr-3 focus:outline-none sm:text-xs"><img src="../../../assets/sort.svg" class="h-6">Name {{ nascending ? 'Ascending' : 'Descending' }}</button>
+    </div>
+    <div class="flex flex-wrap justify-evenly pt-4 " infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+        <ng-container *ngFor="let movies of movieList" class="mt-2 ">
+            <app-movie-tile [movie]="movies"></app-movie-tile>
+        </ng-container>
+    </div>
+</div>

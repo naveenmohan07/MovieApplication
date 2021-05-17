@@ -1,0 +1,24 @@
+<app-alert [message]="msg" *ngIf="msg"></app-alert>
+<div class="flip-card flex flex-col flex-wrap h-80 w-60 mb-4 ">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="movie.image" class="h-80 w-56 object-cover" alt="Movie poster">
+      </div>
+      <div class="flip-card-back h-80 w-60 bg-gray-800" >
+        <div class="movie-name pt-4">
+            <p>{{ movie.name }}</p>
+        </div>
+        <div class="play flex justify-center pt-4 cursor-pointer" (click)="routePlayer(movie.name)">
+          <img src="../../../../assets/play-button.svg" class="h-10">
+        </div>
+        <div class="movie-genre h-24 grid grid-cols-2 gap-2 pt-2">
+            <p *ngFor="let m of movie.genre">{{m}}</p>
+        </div>
+        <div class="movie-language h-14 grid grid-cols-2 place-content-end text-xs">
+            <p class="p-0">Language {{ movie.language }}</p>
+            <p class="px-0">Released {{ movie.releasedon }}</p>
+        </div>
+        <div class="add bg-red-600 cursor-pointer mt-9 p-1.5" (click)="addtoMyList(movie)" *ngIf="!remove">Add to My List</div>
+        <div class="remove bg-red-600 cursor-pointer mt-9 p-1.5" (click)="removeFromMyList(movie)" *ngIf="remove">Remove from My List</div>
+    </div>
+  </div>

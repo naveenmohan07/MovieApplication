@@ -1,0 +1,10 @@
+<div class="wrapper h-screen">
+    <div class="grid grid-cols-4 justify-items-center pt-32">
+        <ng-container *ngFor="let movies of movieList">
+            <app-movie-tile [movie]="movies" [remove]="remove"></app-movie-tile>
+        </ng-container>
+    </div>
+    <div class="info" *ngIf="this.movieList.length==0">
+        <p class="grid justify-items-center text-gray-400">Your List is Empty.Try to add by <a routerLink="/">click here.</a></p>
+    </div>
+</div>

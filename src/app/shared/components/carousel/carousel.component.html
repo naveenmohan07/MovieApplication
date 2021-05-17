@@ -1,0 +1,9 @@
+<!-- <div class="container"> -->
+	<div class="sliders">
+		<ng-container *ngFor="let img of moviesList; let i = index">
+			<div class="slider" *ngIf="current==i">
+				<img id="img[i]" [src]="img.image" class="h-screen w-screen">
+			</div>
+		</ng-container>
+	</div>
+<!-- </div> -->

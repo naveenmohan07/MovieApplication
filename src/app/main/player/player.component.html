@@ -1,0 +1,26 @@
+<ng-container >
+    <div class="flex flex-col justify-center h-screen" *ngFor="let movie of movie;let i = index">
+        <video id="my_video_1" class=" pt-20" controls preload="none"
+            poster='http://video-js.zencoder.com/oceans-clip.jpg'
+            >
+            <source [src]="movie.src" type='video/mp4' /> 
+        </video>
+        <div class="movie-details px-24 space-y-4">
+            <div class="movie-name py-2 border-b-2 border-yellow-600">
+                <p class="text-white">{{ movie.name }}</p>
+            </div>
+            <div  class="flex">
+                <p class="text-white">Genre</p>
+                <p class="px-6 text-gray-400" *ngFor="let m of movie.genre">{{ m }}</p>
+            </div>
+            <div  class="flex">
+                <p class="text-white">Cast</p>
+                <p class="px-6 text-gray-400" *ngFor="let m of movie.cast">{{ m }}</p>
+            </div>
+            <div class="movie-Overview">
+                <p class="text-white">Movie Overview</p>
+            </div>
+            <p class="text-gray-400">{{ movie.details }}</p>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,9 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="body" *ngIf="!isLoading">
+    <div class="carousel">
+        <app-carousel></app-carousel>
+    </div>
+    <div class="movie-tiles">
+        <app-recent-movies></app-recent-movies>
+    </div>
+</div>

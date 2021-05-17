@@ -1,0 +1,17 @@
+<div class="flex w-full flex-wrap justify-between">
+    <!-- <h1 class="ml-7 my-5  text-white text-xl flex justify-end">Top Trending <div class="ml-3 h-6 w-6 rounded-full bg-red-600 text-sm absolute flex items-center px-0.5">{{ trending }}</div></h1> -->
+    <div class="header flex w-full pt-2 justify-between">
+        <h1 class="ml-7  text-white text-md flex justify-end">Top Trending<div class="ml-1 mt-1 h-5 w-5 rounded-full text-white bg-red-600 text-xs flex items-center justify-center">{{ trending }}</div></h1>
+        <pagination-controls previousLabel="" nextLabel="" (pageChange)="handlePageChange($event)"></pagination-controls>
+    </div>
+    <!-- <button class="text-white mr-10 focus:outline-none" (click)=showall()> {{ clicked ? 'Hide' : 'Show' }} </button> -->
+</div>
+<div class="grid grid-cols-4 justify-items-center ">
+    <ng-container *ngFor="let movies of movieList | paginate : {
+                  itemsPerPage: pageSize,
+                  currentPage: page,
+                  totalItems: count
+                };">
+        <app-movie-tile [movie]="movies" class="relative"></app-movie-tile>
+    </ng-container>
+</div>
